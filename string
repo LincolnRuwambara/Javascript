@@ -1,0 +1,42 @@
+class String {
+    constructor(num1, num2) {
+      this.num1 = parseInt(num1) ;
+      this.num2 = parseInt(num2);
+    }
+    // Getter
+    get plus() {
+      return this.calcPlus();
+    }
+    // Method
+    calcPlus() {
+      return this.num1 + this.num2;
+    }
+    get minus() {
+        return this.calcMinus();
+      }
+      // Method
+      calcMinus() {
+        return this.num1 - this.num2;
+      }
+      get divide() {
+        return this.calcDivide();
+      }
+      // Method
+      calcDivide() {
+        return this.num1 / this.num2;
+      }
+      get multiple() {
+        return this.calcMultiple();
+      }
+      // Method
+      calcMultiple() {
+        return this.num1 * this.num2;
+      }
+    
+  }
+  
+  const number = new String("10", "10");
+  console.log(number.plus);
+  console.log(number.minus);
+  console.log(number.divide);
+  console.log(number.multiple);
