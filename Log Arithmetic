@@ -1,0 +1,132 @@
+function  reverseString(str) {
+  var reverse=""
+  for (j=str.length -1; j>=0;j--){
+      reverse+=str[j];
+  }
+
+  return reverse;
+}
+  
+ function  Plus(num1,num2) {
+  var remainder=0;
+  var ans="";
+    for(i = num1.length -1; i>=0; i--){
+      var temp= parseInt(num1[i])+parseInt(num2[i])+remainder;
+      if (temp >= 10){
+      remainder= parseInt(temp /10);
+       ans+=temp % 10;
+      }
+      else{
+       ans+=temp;
+      remainder=0;
+      }
+ 
+      
+    }
+    console.log(reverseString(ans));
+           
+  }
+  function Minus(num1,num2){
+  var ans="";
+  var  remainder=0;
+  
+  for(i = num1.length-1 ;i>=0;i--){
+    var first=parseInt(num1[i]);
+    var second = parseInt(num2[i])+remainder;
+    if( first<second) {
+      first= parseInt(num1[i])+10;
+      var temp= first-second;
+      ans+=temp;
+      if (remainder ==0)
+      {remainder+=1;}
+    }
+     else{
+
+      var temp= first-second;
+      ans+=temp;
+      remainder=0;
+
+     }
+
+
+
+  }
+  console.log(reverseString(ans));
+
+  }
+  function Divide(num1,num2){
+    var ans="";
+    var remainder=0
+  for(i =0;i<=num1.length-1;i++){
+     var first= num1;
+     var second= num2;
+     if(first[i]<second){
+
+        first= first[i]+first[i+1];
+
+       var temp=(parseInt(first)+remainder)/parseInt(second);
+       if (temp>=10){
+        remainder= parseInt(temp %10);
+       ans+=temp/10;
+       i+=1;
+       }
+        else{
+           ans+=temp;
+          }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+ 
+     }
+     else{
+      if (temp>=10){
+        remainder= parseInt(temp /10);
+       ans+=temp % 10;
+       i+=1;
+       }
+      ans+=temp;
+     }    
+
+     
+
+  }
+
+  console.log(ans);
+
+
+
+  }
+ function Multiple(num1,num2){
+  var ans="";
+  var remainder=0;
+
+  for(i= num1.length-1;i>=0;i--){
+
+   var first= num1[i];
+   var second= num2;
+   var temp= (parseInt(first)*parseInt(second))+remainder;
+
+      if (temp>=10){
+          temp= temp%10
+          remainder=temp/10
+
+          ans+=temp;
+
+
+      }
+      else{
+        ans+=temp;
+        remainder=0;
+      }
+
+  }
+
+
+  console.log(reverseString(ans));
+
+
+
+
+ }
+ Plus("19999999999999999999999","11999999999999999999999");
+ Minus("29999999999999909090","19898989898989898999");
+ Divide("100","2");
+ Multiple("10007","26")
+ 
