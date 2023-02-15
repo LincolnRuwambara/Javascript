@@ -1,0 +1,23 @@
+function fib(key){
+
+
+let fib_map=new Map();
+fib_map.set(1,1);
+fib_map.set(2,1);
+fib_map.set(3,2);
+
+for (i=3;i<=key;i++){
+    
+    var num1= fib_map.get(i-1)
+    var num2= fib_map.get(i-2);
+    var next_number=num1+num2;
+    fib_map.set(i,next_number);
+    
+
+}
+      console.log(fib_map.get(key));
+    
+
+}
+
+fib(7);
