@@ -1,23 +1,48 @@
 function fib(key){
 
 
-let fib_map=new Map();
-fib_map.set(1,1);
-fib_map.set(2,1);
-fib_map.set(3,2);
+    const cache= new Map();
+ if(key===0 || key===1) {
 
-for (i=3;i<=key;i++){
-    
-    var num1= fib_map.get(i-1)
-    var num2= fib_map.get(i-2);
-    var next_number=num1+num2;
-    fib_map.set(i,next_number);
+
+console.log(key);
+
+
+ }
+
+else if (cache.has(key)){
+
+
+
+    console.log(cache.get(key));
+
+ }
+
+else{
+    cache.set(1,1);
+    cache.set(2,1);
+    cache.set(3,2);
+ 
+ for (i=3;i<=key;i++){
+     
+     var num1= cache.get(i-1)
+     var num2= cache.get(i-2);
+     var next_number=num1+num2;
+     cache.set(i,next_number);
+     
+ 
+ }
+       console.log(cache.get(key));
+} 
+
+
+
     
 
 }
-      console.log(fib_map.get(key));
-    
 
-}
+
+
+
 
 fib(100);
