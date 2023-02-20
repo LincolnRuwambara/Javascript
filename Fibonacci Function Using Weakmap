@@ -1,0 +1,21 @@
+const cache = new WeakMap();
+
+function fibonacci(n) {
+  
+  if (cache.has(n)) {
+    return cache.get(n);
+  }
+  
+  
+  if (n === 1 || n=== 0) {
+    return n;
+  }
+  
+ 
+  const result = fibonacci(n - 1) + fibonacci(n - 2);
+ 
+  cache.set(n, result);
+  
+  
+  return result;
+}
