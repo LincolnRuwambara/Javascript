@@ -1,0 +1,31 @@
+const Eventemitter= require ('events');
+
+
+const emitter= new Eventemitter();
+
+function myName(name){
+
+console.log(name)
+
+}
+
+function mySurname(name,surname){
+
+console.log(name+" "+surname);
+
+}
+emitter.on('newEvent',myName);
+emitter.on('newEvent',mySurname);
+
+emitter.prependListener('newEvent',function(statement,name,surname){
+
+    console.log(name+" "+surname+" "+statement)
+})
+emitter.removeListener('newEvent',myName)
+
+const name= "John";
+const surname= "Doe"
+const statement="Hello World This is"
+emitter.emit('newEvent',name,surname,statement);
+
+
