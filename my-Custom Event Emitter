@@ -1,0 +1,81 @@
+class Eventemitter{
+
+
+    constructor() {
+       
+        this.eventList={};
+       
+      }
+
+      addListener(eventName,eventListener){
+       this.eventList[eventName] = this.eventList[eventName] || [];
+        this.eventList[eventName].push(eventListener);
+
+       return this;
+
+
+      }
+     
+            on(eventName,eventListener) {
+    
+               
+             return this.addListener(eventName,eventListener);
+
+                }
+
+
+            
+                prependListener(eventName,eventListener){
+             this.eventList[eventName].unshift(eventListener);
+           
+                }
+               removeListener(eventName,eventListener){
+
+                let list= this.eventList[eventName];
+             for(let i=list.length;i>=0;i--){
+                 
+                 if (list[i]=== eventListener){
+
+                 list.splice(i,1);
+                 break;
+              }
+
+             }
+              
+           
+               }
+               emit(eventName, ...args) {
+                let fns = this.eventList[eventName];
+                if (!fns) return false;
+                fns.forEach((f) => {
+                  f(...args);
+                });
+                return true;
+            }
+                  
+                
+    }
+
+    const eventEmitter= new Eventemitter();
+
+    function myName(){
+        console.log("John")
+              
+              }
+function mySurname(){
+
+    console.log("Doe");
+}
+    function statement(){
+
+
+        console.log("Hello World");
+    }
+
+    eventEmitter.on('newEvent',myName);
+    eventEmitter.on('newEvent',mySurname);
+    eventEmitter.on('newEvent',statement);
+    eventEmitter.removeListener('newEvent',myName);
+    eventEmitter.emit('newEvent');
+    eventEmitter.prependListener('newEvent',myName);
+    eventEmitter.emit('newEvent');
