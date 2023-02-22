@@ -7,19 +7,12 @@ class Eventemitter{
        
       }
 
-      addListener(eventName,eventListener){
-       this.eventList[eventName] = this.eventList[eventName] || [];
-        this.eventList[eventName].push(eventListener);
-
-       return this;
-
-
-      }
      
             on(eventName,eventListener) {
     
                
-             return this.addListener(eventName,eventListener);
+             this.eventList[eventName] = this.eventList[eventName] || [];
+        this.eventList[eventName].push(eventListener);
 
                 }
 
