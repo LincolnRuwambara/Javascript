@@ -1,0 +1,75 @@
+class  Stack{
+    constructor(){
+    
+    this.items=[]
+    
+    
+        
+    }
+    push(item){
+    this.items.push(item);
+    console.log(this.items);
+    }
+    
+    pop(item){
+   return this.items.pop();
+    
+    }
+
+    top(){
+
+let topItem= this.items[this.items.length-1];
+console.log(topItem)
+
+  return topItem
+    }
+    bootom(){
+let botomItem=this.items[0];
+     return botomItem;
+
+        
+    }
+    
+    isEmpty(){
+
+ console.log(this.items.length<1) ;
+
+
+    }
+    
+    
+    }
+    
+    
+   
+
+    class Queue  {
+        constructor(){
+        this.stack1= new Stack;
+        this.stack2=new Stack;
+        }
+          
+         
+        push(item){
+
+         this.stack1.push(item);
+
+         }
+        pop(){
+
+
+        console.log("The First item is"  +  " "+  this.stack1.bootom());
+
+    
+        }
+        
+
+
+    }
+
+    let que= new  Queue();
+
+    que.push(6);
+    que.push(1);
+    que.push(2);
+    que.pop();
