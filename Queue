@@ -8,27 +8,22 @@ class  Stack{
     }
     push(item){
     this.items.push(item);
-    console.log(this.items);
-    }
-    
-    pop(item){
-   return this.items.pop();
     
     }
+    
+    pop(){
+        let item = this.items.pop();
+        return item;
+        
+        }
+        
 
     top(){
 
 let topItem= this.items[this.items.length-1];
-console.log(topItem)
-
   return topItem
     }
-    bootom(){
-let botomItem=this.items[0];
-     return botomItem;
-
-        
-    }
+    
     
     isEmpty(){
 
@@ -36,7 +31,13 @@ let botomItem=this.items[0];
 
 
     }
-    
+    size(){
+
+
+   let value=this.items.length;
+    return value
+
+    }
     
     }
     
@@ -55,11 +56,13 @@ let botomItem=this.items[0];
          this.stack1.push(item);
 
          }
-        pop(){
-
-
-        console.log("The First item is"  +  " "+  this.stack1.bootom());
-
+        popItem(){
+        let size= this.stack1.size();
+      for(let i=0;i<size;i++){
+        let saved= this.stack1.pop();
+        this.stack2.push(saved);
+      }
+       console.log(this.stack2.pop());
     
         }
         
@@ -69,7 +72,7 @@ let botomItem=this.items[0];
 
     let que= new  Queue();
 
-    que.push(6);
-    que.push(1);
-    que.push(2);
-    que.pop();
+   que.push(6);
+   que.push(1);
+   que.push(2);
+   que.popItem();
