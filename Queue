@@ -27,7 +27,7 @@ let topItem= this.items[this.items.length-1];
     
     isEmpty(){
 
- console.log(this.items.length<1) ;
+ return this.items.length<1;
 
 
     }
@@ -58,21 +58,39 @@ let topItem= this.items[this.items.length-1];
          }
         popItem(){
         let size= this.stack1.size();
-      for(let i=0;i<size;i++){
-        let saved= this.stack1.pop();
-        this.stack2.push(saved);
-      }
-       console.log(this.stack2.pop());
-    
+        if(!this.stack2.isEmpty()){
+
+            console.log(this.stack2.pop());
+
         }
+            else{
+
+
+                for(let i=0;i<size;i++){
+                    let saved= this.stack1.pop();
+                           this.stack2.push(saved);
+                            }
+                             console.log(this.stack2.pop());
+    
+            }
+                    
+            
+                
         
+        }
+      
+       
+
+
 
 
     }
 
     let que= new  Queue();
-
+   que.push(10);
    que.push(6);
    que.push(1);
    que.push(2);
+   que.popItem();
+   que.push(5);
    que.popItem();
