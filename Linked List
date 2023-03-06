@@ -1,0 +1,147 @@
+class Node{
+  constructor(data,next=null){
+
+  this.data=data;
+  this.next=next;
+
+  }
+
+
+
+}
+
+class linkedList{
+
+    constructor(){
+        this.head= null;
+        this.tail=null;
+     
+        
+
+    }
+add(data){
+
+    let node= new Node(data)
+if (this.head== null){
+    this.head=node;
+    this.tail=node;
+   
+}
+
+else{
+
+this.tail.next=node;
+this.tail=node;
+
+
+}
+
+}
+delete(data){
+
+if(this.head !== null){
+
+let current = this.head;
+let nextNode= current.next;
+while(current){
+
+if(nextNode.data== data){
+
+current.next= nextNode.next;
+break;
+
+}
+current= current.next;
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+}
+find(data){
+
+if(this.head !==null){
+  let current = this.head;
+  while(current){
+  if(current.data==data){
+   console.log(current);
+   break;
+
+  }
+else{
+    current= current.next;
+    if (current==null){console.log("Not Found");}
+}
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+}
+
+}
+function find_loop(list){
+let slow_pointer= list.head;
+let fast_pointer= list.head.next;
+  while(slow_pointer !== null && fast_pointer!==null && fast_pointer !==null){
+      
+
+slow_pointer= slow_pointer.next;
+fast_pointer= fast_pointer.next;
+if(slow_pointer == fast_pointer){
+console.log("Loop Found");
+break;
+
+
+}
+console.log("No loop");
+
+
+
+  }
+
+
+
+}
+
+
+
+
+let link = new linkedList();
+link.add(100);
+link.add(200);
+link.add(400);
+link.add(300);
+link.add(500);
+link.delete(200);
+link.find(300);
+find_loop(link);
+
+
+
+
+
+
+
