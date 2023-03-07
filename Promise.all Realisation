@@ -1,0 +1,61 @@
+class Promise{
+
+
+all(arr){
+
+    let result=[];
+for(let i =0;i<arr.length;i++){
+
+ result[i]=  execute(arr[i]);
+ function execute(func){
+   if (func instanceof Function ){
+
+    return  func();
+
+   }
+
+    else{
+
+        return func;
+    }
+    
+    
+    }
+
+}
+
+for(let j =0;j<arr.length;j++){
+    if(typeof result[j]==undefined){
+
+        setTimeout(check(), 1000);
+    }
+    else if( result[j] instanceof Error){reject()}
+    
+    
+}
+console.log(result);
+
+
+}
+
+
+
+
+reject(){
+
+console.log("An error has occured");
+Exit(); 
+
+
+}
+
+
+ 
+
+
+}
+
+
+
+let prom = new Promise();
+prom.all([1,8.9,function test(){return 23;}]);
